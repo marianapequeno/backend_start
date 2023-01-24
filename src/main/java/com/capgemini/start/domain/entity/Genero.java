@@ -28,10 +28,9 @@ public class Genero {
 	private String descricao;
 	
 	@Column(name="DT_INCLUSAO", nullable = false)
-	private Date dataIncusao;
+	private Date dataInclusao;
 	
 	@Column(name="DT_ALTERACAO", nullable = false)
 	private Date dataAlteracao;
 	
-
 }
