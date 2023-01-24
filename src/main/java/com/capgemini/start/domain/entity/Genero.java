@@ -2,48 +2,36 @@ package com.capgemini.start.domain.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter @Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name = "tb_genero")
 public class Genero {
 	
+	@EqualsAndHashCode.Include
+	@Id
+	@Column(name="ID_GENERO")
 	private Long id;
 	
+	@Column(name="DS_GENERO", nullable = false)
 	private String descricao;
 	
+	@Column(name="DT_INCLUSAO", nullable = false)
 	private Date dataIncusao;
 	
+	@Column(name="DT_ALTERACAO", nullable = false)
 	private Date dataAlteracao;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public Date getDataIncusao() {
-		return dataIncusao;
-	}
-
-	public void setDataIncusao(Date dataIncusao) {
-		this.dataIncusao = dataIncusao;
-	}
-
-	public Date getDataAlteracao() {
-		return dataAlteracao;
-	}
-
-	public void setDataAlteracao(Date dataAlteracao) {
-		this.dataAlteracao = dataAlteracao;
-	}
-	
 	
 
 }
