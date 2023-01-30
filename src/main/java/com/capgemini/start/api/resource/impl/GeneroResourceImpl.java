@@ -68,7 +68,7 @@ public class GeneroResourceImpl implements GeneroResource{
 	
 
 	@Override
-	public ResponseEntity<GeneroDTO> update(Long id, @Valid GeneroInputDTO genero) {
+	public ResponseEntity<GeneroDTO> update(Long id, @RequestBody @Valid GeneroInputDTO genero) {
 		Genero toUpdate = this.service.findById(id);
 		toUpdate.setDescricao(genero.getDescricao());
 		
