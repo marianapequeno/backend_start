@@ -1,5 +1,7 @@
 package com.capgemini.start.api.resource;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name="Genero", description="Título do genero")
+@Tag(name = "Genero", description = "Título do genero")
 public interface GeneroResource {
 	
 	@Operation(summary = "Consulta um genero por id")
@@ -25,7 +27,7 @@ public interface GeneroResource {
 	
 	@Operation(summary = "Lista todos os generos")
 	@GetMapping()
-	ResponseEntity<GeneroDTO> findAll();
+	ResponseEntity<List<GeneroDTO>> findAll();
 	
 	@Operation(summary = "Insere um genero")
 	@PostMapping()
@@ -33,10 +35,9 @@ public interface GeneroResource {
 	
 	@Operation(summary = "Atualiza um genero")
 	@PutMapping(value = "/{id}")
-	ResponseEntity<GeneroDTO> findById(@PathVariable Long id, @RequestBody @Valid GeneroInputDTO genero);
+	ResponseEntity<GeneroDTO> update(@PathVariable Long id, @RequestBody @Valid GeneroInputDTO genero);
 
-	@Operation(summary = "Lista todos os generos")
+	@Operation(summary = "Deleta um genero pelo id")
 	@DeleteMapping(value = "/{id}")
 	ResponseEntity<Void> delete(@PathVariable Long id);
-	
 }

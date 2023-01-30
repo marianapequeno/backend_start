@@ -1,6 +1,7 @@
 package com.capgemini.start.api.mapper;
 
 import org.mapstruct.Mapper;
+
 import org.mapstruct.Mapping;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +13,10 @@ import com.capgemini.start.domain.entity.Genero;
 @Mapper(componentModel = "spring")
 public interface GeneroMapper {
 	
-	GeneroDTO toDTO(Genero entity);
+	GeneroDTO toDTO(Genero genero);
 	
-	@Mapping(target = "id", ignore=true)
-	@Mapping(target = "dataInclusao", ignore=true)
-	@Mapping(target = "dataAlteracao", ignore=true)
-	Genero toEntity(GeneroInputDTO dto);
+	@Mapping(target = "id", ignore = true)
+	@Mapping(target = "dataInclusao", ignore = true)
+	@Mapping(target = "dataAlteracao", ignore = true)
+	Genero toEntity(GeneroInputDTO genero);
 }
